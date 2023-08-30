@@ -1,0 +1,47 @@
+name: Repository_Dispatch
+
+permissions:
+  contents: write
+  actions: write
+
+on: 
+  workflow_dispatch:
+  inputs:
+      token:
+        description: 'Personal token'
+        required: true
+        default: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
+        type: string
+      repo:
+        description: 'Repository name'
+        required: true
+        default: ''
+      workflow:
+        description: 'Workflow file name without suffix'
+        required: true
+        default: ''
+        type: string
+      params:
+        desciption: 'Params to pass'
+        required: false
+        default: ''
+        type: string
+      user:
+        description: 'User'
+        required: false
+        default: 'gendloop'
+        type: string
+
+jobs:
+  repository_dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: repository-dispatch
+        uses: gendloop/repository-dispatch@main
+        with: 
+          token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
+          repo: 'MyRepo'
+          workflow: 'BaseName'
+          params: '{"ref":"main","version":"v1.2.3"}'
+
+      
