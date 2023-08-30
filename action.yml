@@ -37,5 +37,5 @@ runs:
             -H 'Accept: application/vnd.github.v3+json' \
             -H "Authorization: Bearer ${{ inputs.token }}" \
             https://api.github.com/repos/${{ inputs.user }}/${{ inputs.repo }}/actions/workflows/${{ inputs.workflow }}.yml/dispatches \
-            -d "'${{ inputs.params }}'"
+            -d "${{ inputs.params }}"
       

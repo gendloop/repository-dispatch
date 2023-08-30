@@ -7,11 +7,6 @@ permissions:
 on: 
   workflow_dispatch:
     inputs:
-      token:
-        description: 'Personal token'
-        required: true
-        default: ''
-        type: string
       repo:
         description: 'Repository name'
         required: true
@@ -39,7 +34,7 @@ jobs:
       - name: repository-dispatch
         uses: gendloop/repository-dispatch@main
         with: 
-          token: ${{ inputs.token }}
+          token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
           repo: ${{ inputs.repo }}
           workflow: ${{ inputs.workflow }}
           params: ${{ inputs.params }}
