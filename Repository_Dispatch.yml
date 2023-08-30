@@ -10,7 +10,7 @@ on:
       token:
         description: 'Personal token'
         required: true
-        default: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
+        default: ''
         type: string
       repo:
         description: 'Repository name'
@@ -39,9 +39,9 @@ jobs:
       - name: repository-dispatch
         uses: gendloop/repository-dispatch@main
         with: 
-          token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
-          repo: 'MyRepo'
-          workflow: 'BaseName'
-          params: '{"ref":"main","version":"v1.2.3"}'
+          token: ${{ inputs.token }}
+          repo: ${{ inputs.repo }}
+          workflow: ${{ inputs.workflow }}
+          params: ${{ inputs.params }}
 
       
