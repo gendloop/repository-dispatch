@@ -22,7 +22,7 @@ on:
         default: ''
         type: string
       params:
-        desciption: 'Params to pass'
+        description: 'Params to pass'
         required: false
         default: ''
         type: string
