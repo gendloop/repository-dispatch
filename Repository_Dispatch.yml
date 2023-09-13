@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: repository-dispatch
-        uses: gendloop/repository-dispatch@main
+        uses: gendloop/repository-dispatch@v1.0.0
         with: 
           token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
           repo: ${{ inputs.repo }}
