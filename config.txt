@@ -1,0 +1,5 @@
+
+PROJECT_NAME=repository-dispatch
+repository-dispatch_VERSION_MAJOR=1
+repository-dispatch_VERSION_MINOR=0
+repository-dispatch_VERSION_PATCH=0
