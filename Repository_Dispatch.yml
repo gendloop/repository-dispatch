@@ -4,7 +4,7 @@ permissions:
   contents: write
   actions: write
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       repo:
@@ -33,10 +33,8 @@ jobs:
     steps:
       - name: repository-dispatch
         uses: gendloop/repository-dispatch@v1.0.0
-        with: 
+        with:
           token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
           repo: ${{ inputs.repo }}
           workflow: ${{ inputs.workflow }}
           params: ${{ inputs.params }}
-
-      
